@@ -12,17 +12,12 @@ class PasswordEncryptionServiceTest {
     @Autowired
     private PasswordEncryptionService passwordEncryptionService;
     private String pwd = "Hemant";
-    private String encoded;
 
-    @Test
-    void encrypt ( ) {
-        encoded = passwordEncryptionService.encrypt(pwd);
-        System.out.println(encoded);
-    }
+
 
     @Test
     void match ( ) {
-        encoded = passwordEncryptionService.encrypt(pwd);
+       String encoded = passwordEncryptionService.encrypt(pwd);
         final boolean match = passwordEncryptionService.match(pwd, encoded);
         assertTrue(match);
     }
